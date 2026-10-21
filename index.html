@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Oratilwe T. — Computer Science student and software developer. Portfolio featuring systems engineering, networking projects and street photography." />
+  <title>Oratilwe T. — CS Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SITE BACKGROUND — full-viewport street photograph
+       CSS sets background-image: url("assets/street-background.jpg").
+       aria-hidden because the image is purely atmospheric/decorative;
+       meaningful content is in the sections below.
+  ====================================================================== -->
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__overlay"></div>
+  </div>
+
+  <!-- =====================================================================
+       HEADER / PRIMARY NAVIGATION
+  ====================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+
+      <a href="#home" class="site-header__identity" aria-label="Oratilwe T. — return to top">
+        <span class="site-header__name">ORATILWE T.</span>
+        <span class="site-header__status" aria-hidden="true">
+          <span class="site-header__status-dot"></span>
+          COMPUTER SCIENCE STUDENT
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <button
+          class="site-nav__toggle"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+          type="button"
+        >
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span class="site-nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <ul class="site-nav__list" id="primary-menu" role="list">
+          <li><a class="site-nav__link" href="#home">Home</a></li>
+          <li><a class="site-nav__link" href="#work">Work</a></li>
+          <li><a class="site-nav__link" href="#visual-archive">Visual Archive</a></li>
+          <li><a class="site-nav__link" href="#notes">Notes</a></li>
+          <li><a class="site-nav__link" href="#about">About</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN CONTENT
+  ====================================================================== -->
+  <main id="main-content">
+
+    <!-- =================================================================
+         HERO SECTION — full viewport, photograph as visual focus
+    ================================================================== -->
+    <section id="home" class="hero" aria-label="Introduction">
+
+      <div class="hero__content">
+
+        <div class="hero__labels">
+          <span class="hero__label hero__label--primary">COMPUTER SCIENCE STUDENT</span>
+          <span class="hero__label hero__label--secondary">SOFTWARE DEVELOPER IN PROGRESS</span>
+        </div>
+
+        <h1 class="hero__headline">
+          I observe.<br />
+          I design.<br />
+          I build.
+        </h1>
+
+        <p class="hero__intro">
+          Studying Computer Science with a focus on building real systems —
+          offline network architecture, sensor-driven input processing and the
+          engineering decisions that turn a concept into working software.
+        </p>
+
+        <nav class="hero__actions" aria-label="Primary actions">
+          <a class="hero__cta hero__cta--primary" href="#work">VIEW SELECTED PROJECTS</a>
+          <a
+            class="hero__cta hero__cta--secondary"
+            href="YOUR_LINKEDIN_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile (opens in new tab)"
+          >LINKEDIN</a>
+          <a
+            class="hero__cta hero__cta--tertiary"
+            href="assets/CV.pdf"
+            download
+            aria-label="Download CV as PDF"
+          >DOWNLOAD CV</a>
+        </nav>
+
+      </div>
+
+      <!-- ---------------------------------------------------------------
+           TECHNICAL INTERFACE OVERLAYS
+           Layered editorial annotations — aria-hidden where decorative.
+           Interactive panels (code, skills, diagram) keep pointer events.
+      ---------------------------------------------------------------- -->
+
+      <!-- Location label -->
+      <aside class="overlay overlay--location" aria-label="Location">
+        <span class="overlay__coord">26°12′S 28°02′E</span>
+        <span class="overlay__location-name">Johannesburg, ZA</span>
+      </aside>
+
+      <!-- Crosshair — top left -->
+      <div class="overlay overlay--crosshair overlay--crosshair-tl" aria-hidden="true">
+        <div class="crosshair__h"></div>
+        <div class="crosshair__v"></div>
+      </div>
+
+      <!-- Crosshair — bottom right -->
+      <div class="overlay overlay--crosshair overlay--crosshair-br" aria-hidden="true">
+        <div class="crosshair__h"></div>
+        <div class="crosshair__v"></div>
+      </div>
+
+      <!-- Measurement rule -->
+      <div class="overlay overlay--rule" aria-hidden="true">
+        <div class="rule__line"></div>
+        <span class="rule__label">SYS / 001</span>
+      </div>
+
+      <!-- Handwritten-style caption -->
+      <p class="overlay overlay--caption" aria-label="Personal caption">
+        Same streets. Different perspective.
+      </p>
+
+      <!-- Code annotation panel — VGS illustrative snippet -->
+      <aside class="overlay overlay--code-panel" aria-label="VGS project code annotation">
+        <header class="code-panel__header">
+          <span class="code-panel__tag">VGS // UDP RELAY</span>
+          <span class="code-panel__status">ILLUSTRATIVE</span>
+        </header>
+        <pre class="code-panel__snippet" aria-label="Illustrative UDP relay snippet"><code><span class="tok-comment">// Android → PC sensor relay (concept)</span>
+<span class="tok-keyword">val</span> socket = DatagramSocket()
+<span class="tok-keyword">val</span> packet = DatagramPacket(
+    axisData.toByteArray(),
+    axisData.size,
+    InetAddress.getByName(HOST),
+    PORT
+)
+socket.send(packet)</code></pre>
+      </aside>
+
+      <!-- Technical skills -->
+      <aside class="overlay overlay--skills" aria-label="Technical skills">
+        <h2 class="overlay__heading">SKILLS</h2>
+        <ul class="skills-list" role="list">
+          <li>Kotlin / Android</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>UDP / Networking</li>
+          <li>System Design</li>
+          <li>Linux</li>
+          <li>Git</li>
+          <li>C / C++</li>
+        </ul>
+      </aside>
+
+    </section>
+
+    <!-- =================================================================
+         WORK SECTION
+    ================================================================== -->
+    <section id="work" class="section section--work" aria-labelledby="work-heading">
+
+      <header class="section__header">
+        <span class="section__index" aria-hidden="true">01</span>
+        <h2 id="work-heading" class="section__title">Selected Work</h2>
+        <p class="section__subtitle">Projects in development and exploration</p>
+      </header>
+
+      <div class="projects">
+
+        <!-- PRIMARY PROJECT — Virtual Gaming Steering (VGS) -->
+        <article class="project project--featured" aria-labelledby="vgs-title">
+
+          <header class="project__header">
+            <span class="project__index" aria-hidden="true">P.01</span>
+            <h3 id="vgs-title" class="project__title">Virtual Gaming Steering</h3>
+            <span class="project__status project__status--in-progress">IN DEVELOPMENT</span>
+          </header>
+
+          <div class="project__body">
+
+            <div class="project__overview">
+              <h4 class="project__section-label">Overview</h4>
+              <p>
+                VGS turns an Android smartphone into a wireless steering controller
+                for PC racing games without proprietary hardware. Motion sensor data
+                is relayed over UDP to a PC receiver, which maps it to a virtual
+                controller that the game recognises.
+              </p>
+            </div>
+
+            <div class="project__problem">
+              <h4 class="project__section-label">Problem</h4>
+              <p>
+                PC racing games expect a dedicated steering wheel peripheral.
+                Physical controllers are expensive. The aim is to use hardware
+                most people already own — a modern Android phone — and bridge the
+                gap entirely in software.
+              </p>
+            </div>
+
+            <div class="project__architecture">
+              <h4 class="project__section-label">System Architecture</h4>
+              <ol class="architecture__steps" role="list">
+                <li>Android app reads gyroscope and accelerometer input</li>
+                <li>Sensor data is serialised and sent via UDP over a local network</li>
+                <li>Python receiver on the PC parses incoming packets</li>
+                <li>Virtual controller is instantiated (e.g. via vgamepad)</li>
+                <li>Axis and button mappings are applied and fed to the game</li>
+              </ol>
+            </div>
+
+            <div class="project__tech">
+              <h4 class="project__section-label">Technologies</h4>
+              <ul class="tech-tags" role="list">
+                <li class="tech-tag">Kotlin</li>
+                <li class="tech-tag">Android SDK</li>
+                <li class="tech-tag">UDP Sockets</li>
+                <li class="tech-tag">Python</li>
+                <li class="tech-tag">vgamepad</li>
+                <li class="tech-tag">LAN Networking</li>
+                <li class="tech-tag">Sensor API</li>
+              </ul>
+            </div>
+
+            <div class="project__status-detail">
+              <h4 class="project__section-label">Implementation Status</h4>
+              <p>
+                Active development. Core UDP transmission and receiver architecture
+                are being prototyped. Virtual controller mapping and latency
+                optimisation are the next milestones.
+              </p>
+            </div>
+
+            <div class="project__lessons">
+              <h4 class="project__section-label">Challenges &amp; Lessons</h4>
+              <p>
+                Sensor noise filtering, UDP packet-loss tolerance and
+                platform-specific virtual input driver requirements are the primary
+                technical challenges. Each constraint is shaping a more robust
+                architecture than the initial design.
+              </p>
+            </div>
+
+            <footer class="project__footer">
+              <a
+                class="project__link project__link--github"
+                href="https://github.com/Ora1xx/my-VGS-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="VGS GitHub repository (opens in new tab)"
+              >GitHub Repository</a>
+              <!--
+                Uncomment when a live demo is available:
+                <a
+                  class="project__link project__link--demo"
+                  href="YOUR_VGS_DEMO_URL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="VGS live demo (opens in new tab)"
+                >Live Demo</a>
+              -->
+            </footer>
+
+          </div>
+        </article>
+
+        <!-- FUTURE PROJECT SLOT -->
+        <article class="project project--placeholder" aria-labelledby="next-project-title">
+          <header class="project__header">
+            <span class="project__index" aria-hidden="true">P.02</span>
+            <h3 id="next-project-title" class="project__title">Next Project</h3>
+            <span class="project__status project__status--planned">UPCOMING</span>
+          </header>
+          <div class="project__body">
+            <p class="project__placeholder-text">
+              Reserved for the next project. Replace this entry with real work when ready.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         VISUAL ARCHIVE SECTION
+    ================================================================== -->
+    <section id="visual-archive" class="section section--visual-archive" aria-labelledby="archive-heading">
+
+      <header class="section__header">
+        <span class="section__index" aria-hidden="true">02</span>
+        <h2 id="archive-heading" class="section__title">Visual Archive</h2>
+        <p class="section__subtitle">Street photography and visual experiments</p>
+      </header>
+
+      <!--
+        Gallery: add real photographs by replacing each placeholder block with:
+        <figure class="gallery__item" role="listitem">
+          <img src="assets/photos/your-image.jpg" alt="Descriptive caption" />
+          <figcaption class="gallery__caption">
+            <span class="gallery__caption-title">Title</span>
+            <time class="gallery__caption-date" datetime="YYYY-MM-DD">Month YYYY</time>
+          </figcaption>
+        </figure>
+      -->
+      <div class="gallery" role="list" aria-label="Photography gallery">
+
+        <figure class="gallery__item" role="listitem">
+          <div class="gallery__image-placeholder" aria-hidden="true">
+            <span class="gallery__placeholder-label">FRAME 001</span>
+          </div>
+          <figcaption class="gallery__caption">
+            <span class="gallery__caption-title">— awaiting photograph —</span>
+            <time class="gallery__caption-date" datetime="">Date TBC</time>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery__item" role="listitem">
+          <div class="gallery__image-placeholder" aria-hidden="true">
+            <span class="gallery__placeholder-label">FRAME 002</span>
+          </div>
+          <figcaption class="gallery__caption">
+            <span class="gallery__caption-title">— awaiting photograph —</span>
+            <time class="gallery__caption-date" datetime="">Date TBC</time>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery__item" role="listitem">
+          <div class="gallery__image-placeholder" aria-hidden="true">
+            <span class="gallery__placeholder-label">FRAME 003</span>
+          </div>
+          <figcaption class="gallery__caption">
+            <span class="gallery__caption-title">— awaiting photograph —</span>
+            <time class="gallery__caption-date" datetime="">Date TBC</time>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="gallery__empty-state" id="gallery-empty">
+        Photographs will appear here as the archive is populated.
+      </p>
+
+    </section>
+
+    <!-- =================================================================
+         NOTES SECTION
+    ================================================================== -->
+    <section id="notes" class="section section--notes" aria-labelledby="notes-heading">
+
+      <header class="section__header">
+        <span class="section__index" aria-hidden="true">03</span>
+        <h2 id="notes-heading" class="section__title">Notes</h2>
+        <p class="section__subtitle">Technical writing and development logs</p>
+      </header>
+
+      <div class="notes-grid" aria-live="polite">
+        <!--
+          Article template — copy, uncomment and populate when ready:
+
+          <article class="note-card" aria-labelledby="note-1-title">
+            <header class="note-card__header">
+              <span class="note-card__topic">Networking</span>
+              <time class="note-card__date" datetime="YYYY-MM-DD">Month DD, YYYY</time>
+            </header>
+            <h3 id="note-1-title" class="note-card__title">Your note title</h3>
+            <p class="note-card__excerpt">A short excerpt from the note.</p>
+            <a class="note-card__link" href="#">Read note →</a>
+          </article>
+
+          Suggested topics:
+          - Offline system design and local network architecture
+          - UDP vs TCP tradeoffs for real-time sensor data
+          - Android sensor APIs and noise filtering
+          - Virtual input drivers on Windows
+          - VGS software architecture decisions
+        -->
+      </div>
+
+      <p class="notes__empty-state" id="notes-empty">
+        No notes published yet. Development logs and technical writing will appear here.
+      </p>
+
+    </section>
+
+    <!-- =================================================================
+         ABOUT SECTION
+    ================================================================== -->
+    <section id="about" class="section section--about" aria-labelledby="about-heading">
+
+      <header class="section__header">
+        <span class="section__index" aria-hidden="true">04</span>
+        <h2 id="about-heading" class="section__title">About</h2>
+      </header>
+
+      <div class="about__body">
+
+        <div class="about__bio">
+          <h3 class="about__subheading">Who I am</h3>
+          <p>
+            [Your biography here. Describe your background, what drives your
+            interest in Computer Science and what you bring to the work.]
+          </p>
+        </div>
+
+        <div class="about__education">
+          <h3 class="about__subheading">Education</h3>
+          <p>
+            [Your Computer Science programme, institution and current year of study.]
+          </p>
+        </div>
+
+        <div class="about__interests">
+          <h3 class="about__subheading">Technical Interests</h3>
+          <ul class="about__interest-list" role="list">
+            <li>Offline and local network system design</li>
+            <li>Sensor input processing and hardware-software integration</li>
+            <li>Software architecture and engineering tradeoffs</li>
+            <li>Human-computer interaction design</li>
+            <li>[Add further interests]</li>
+          </ul>
+        </div>
+
+        <div class="about__learning">
+          <h3 class="about__subheading">Currently Learning</h3>
+          <p>
+            [Your current learning goals — technologies, concepts, courses or
+            projects you are actively working through.]
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =================================================================
+         CONTACT SECTION
+    ================================================================== -->
+    <section id="contact" class="section section--contact" aria-labelledby="contact-heading">
+
+      <header class="section__header">
+        <span class="section__index" aria-hidden="true">05</span>
+        <h2 id="contact-heading" class="section__title">Contact</h2>
+        <p class="section__subtitle">Let's connect</p>
+      </header>
+
+      <nav class="contact__links" aria-label="Contact and social links">
+        <ul class="contact__list" role="list">
+
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              href="https://www.linkedin.com/in/oratilwe-mohapi-725b122a7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile (opens in new tab)"
+            >
+              <span class="contact__link-label">LinkedIn</span>
+              <span class="contact__link-hint">LINKEDIN_LINK</span>
+            </a>
+          </li>
+
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              href="https://github.com/Ora1xx"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile (opens in new tab)"
+            >
+              <span class="contact__link-label">GitHub</span>
+              <span class="contact__link-hint">GITHUB_LINK</span>
+            </a>
+          </li>
+
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              href="mailto:YOUR_EMAIL_ADDRESS"
+              aria-label="Send email"
+            >
+              <span class="contact__link-label">Email</span>
+              <span class="contact__link-hint">oratshego47@gmail.com</span>
+            </a>
+          </li>
+
+          <!--
+            Add further profiles here:
+            <li class="contact__item">
+              <a
+                class="contact__link"
+                href="YOUR_OTHER_PROFILE_URL"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="[Platform] profile (opens in new tab)"
+              >
+                <span class="contact__link-label">[Platform]</span>
+                <span class="contact__link-hint">YOUR_OTHER_PROFILE_URL</span>
+              </a>
+            </li>
+          -->
+
+          <li class="contact__item">
+            <a
+              class="contact__link contact__link--download"
+              href="assets/CV.pdf"
+              download
+              aria-label="Download CV as PDF"
+            >
+              <span class="contact__link-label">Download CV</span>
+              <span class="contact__link-hint">assets/CV.pdf</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+  ====================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+
+      <p class="site-footer__identity">
+        ORATILWE T.
+        <span class="site-footer__year">— <span id="footer-year"></span></span>
+      </p>
+
+      <nav class="site-footer__nav" aria-label="Footer links">
+        <ul class="site-footer__links" role="list">
+          <li>
+            <a
+              class="site-footer__link"
+              href="https://github.com/Ora1xx"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub (opens in new tab)"
+            >GitHub</a>
+          </li>
+          <li>
+            <a
+              class="site-footer__link"
+              href="https://www.linkedin.com/in/oratilwe-mohapi-725b122a7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn (opens in new tab)"
+            >LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
